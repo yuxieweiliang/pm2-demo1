@@ -3,12 +3,15 @@ const Koa = require('koa2');
 const port = 8083;
 const app = new Koa();
 
+app.get('/', (req, res) => { res.end('Hello world') });
+
 app.listen(port, function (err) {
   if(err) return;
   console.log(`listen for port ${port}`)
 });
+
 process.on('SIGINT', () => {
-  console.info('SIGINT signal received.')
+  console.info('SIGINT signal received.');
 
   // Stops the server from accepting new connections and finishes existing connections.
   server.close(function(err) {
