@@ -3,7 +3,9 @@ const Koa = require('koa2');
 const port = 8083;
 const app = new Koa();
 
-app.get('/', (req, res) => { res.end('Hello world') });
+app.use(async ctx => {
+  ctx.body = 'Hello World';
+});
 
 app.listen(port, function (err) {
   if(err) return;
