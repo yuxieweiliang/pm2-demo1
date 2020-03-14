@@ -19,7 +19,6 @@ module.exports = {
 
   deploy : {
     production : {
-      key: "$HOME/.ssh",
       user : 'root',
       host : '39.107.87.157',
       ref  : 'origin/master',
